@@ -1,15 +1,18 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 @DisplayName("Тесты на проверку заполнения формы DemoQA")
+@Tag("all-tests")
 public class RegistrationFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
     @DisplayName("Проверка заполнения всех полей формы")
+    @Tag("positive-tests")
     @Test
     void fullDataTypingInToFormTest() {
         registrationPage.openPage()
@@ -41,6 +44,7 @@ public class RegistrationFormTests extends TestBase {
     }
 
     @DisplayName("Проверка заполнения только обязательных полей формы")
+    @Tag("positive-tests")
     @Test
     void minimumDataTypingInToFormTest() {
         registrationPage.openPage()
@@ -57,6 +61,7 @@ public class RegistrationFormTests extends TestBase {
     }
 
     @DisplayName("Проверка заполнения поля Электронный адрес невалидными данными")
+    @Tag("negative-tests")
     @Test
     void invalidEmailFieldTypingTest() {
         registrationPage.openPage()
@@ -70,6 +75,7 @@ public class RegistrationFormTests extends TestBase {
     }
 
     @DisplayName("Проверка заполнения поля Телефон невалидными данными")
+    @Tag("negative-tests")
     @Test
     void invalidPhoneFieldTypingTest() {
         registrationPage.openPage()

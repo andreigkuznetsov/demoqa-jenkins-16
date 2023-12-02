@@ -45,8 +45,20 @@ tasks.withType(Test) {
     }
 }
 
-task remote_tests(type: Test) {
+task all_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("remote-tests")
+        includeTags("all-tests")
+    }
+}
+
+task positive_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("positive-tests")
+    }
+}
+
+task negative_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("negative-tests")
     }
 }
